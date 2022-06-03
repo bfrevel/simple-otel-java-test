@@ -1,0 +1,15 @@
+services:
+  guestmanagement:
+    host: localhost
+    port: 9001
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          client:
+            RestTemplate: DEBUG
+
+server:
+  port : 6000

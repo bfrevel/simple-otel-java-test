@@ -1,0 +1,45 @@
+= Simple OTel Java Test
+
+
+== Description
+
+This tool is executing the following POST Request to `localhost:9001` every `10` seconds.
+
+[source, sh]
+----
+curl -X POST "http://localhost:9001/api/Guest" \
+  -H "accept: */*" \
+  -H "Content-Type: application/json-patch+json" \
+  -d "{\"firstName\":\"first\",\"lastName\":\"last\",\"phoneNumber\":\"110519906\",\"email\":\"rand-uuid@nomail.com\",\"dateOfBirth\":\"19/03/1999\"}"
+----
+
+
+
+== Build
+
+[source, sh]
+----
+./gradlew clean bootJar
+----
+
+
+== Download OTel Java Agent
+
+[source, sh]
+----
+curl -O -L https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+----
+
+
+== Run
+
+[source, sh]
+----
+java \
+  -javaagent:${PWD}/opentelemetry-javaagent.jar \
+  -Dotel.javaagent.debug=true \
+  -Dotel.service.name=simple-otel-java-test \
+  -jar build/libs/load-service-0.0.1-SNAPSHOT.jar
+----
+
+
