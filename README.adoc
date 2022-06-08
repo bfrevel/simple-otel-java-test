@@ -10,7 +10,7 @@ This tool is executing the following POST Request to `localhost:9001` every `10`
 curl -X POST "http://localhost:9001/api/Guest" \
   -H "accept: */*" \
   -H "Content-Type: application/json-patch+json" \
-  -d "{\"firstName\":\"first\",\"lastName\":\"last\",\"phoneNumber\":\"110519906\",\"email\":\"rand-uuid@nomail.com\",\"dateOfBirth\":\"19/03/1999\"}"
+  -d "{\"firstName\":\"first\",\"lastName\":\"last\",\"phoneNumber\":\"110519906\",\"email\":\"<random-uuid>@nomail.com\",\"dateOfBirth\":\"19/03/1999\"}"
 ----
 
 
