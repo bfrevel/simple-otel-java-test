@@ -28,7 +28,7 @@ curl -X POST "http://localhost:9001/api/Guest" \
 [source, sh]
 ----
 java \
-  -jar build/libs/load-service-0.0.1-SNAPSHOT.jar
+  -jar build/libs/simple-otel-java-test-*.jar
 ----
 
 
